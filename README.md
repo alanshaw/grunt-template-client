@@ -1,4 +1,4 @@
-# grunt-template-client [![Dependency Status](http://david-dm.org/alanshaw/grunt-template-client/status.png)](http://david-dm.org/alanshaw/grunt-template-client)
+# grunt-template-client [![Dependency Status](https://david-dm.org/alanshaw/grunt-template-client/status.png)](https://david-dm.org/alanshaw/grunt-template-client)
 
 > Compile any and all templates into a ready to use script include.
 
