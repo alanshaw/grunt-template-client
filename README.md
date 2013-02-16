@@ -3,16 +3,18 @@
 > Compile any and all templates into a ready to use script include.
 
 ## Getting Started
-Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-template-client`
+Install this [grunt][grunt] plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-template-client`
 
-Then add this line to your project's `grunt.js` gruntfile:
+[grunt]: http://gruntjs.com/
+[getting_started]: https://github.com/gruntjs/grunt/blob/master/docs/getting_started.md
+
+_Note: as of version 0.3.0 this plugin requires grunt 0.4. Install version 0.2.1 for grunt 0.3 support._
+
+Then add this line to your project's `gruntfile.js`:
 
 ```javascript
 grunt.loadNpmTasks('grunt-template-client');
 ```
-
-[grunt]: http://gruntjs.com/
-[getting_started]: https://github.com/gruntjs/grunt/blob/master/docs/getting_started.md
 
 ## Example
 given the following config and template
@@ -69,6 +71,7 @@ I guess there will be need to tweek the regex that cleans the template.
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][grunt].
 
 ## Release History
+* 0.3.0 - Grunt 0.4 support
 * 0.2.0 - Forked from https://github.com/ullmark/grunt-hogan-client to make generic.
 * 0.1.1 - Initial release
 
