@@ -29,10 +29,10 @@
   "main": "gruntfile.js",
   "bin": "bin/grunt-template-client",
   "engines": {
-    "node": "*"
+    "node": "~0.8.15"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt jshint templateclient nodeunit"
   },
   "devDependencies": {
     "grunt-contrib-clean": "~0.4.0rc6",
