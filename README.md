@@ -3,14 +3,14 @@
 > Compile any and all templates into a ready to use script include.
 
 ## Getting Started
-Install this [grunt][grunt] plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-template-client`
+Install this [grunt][grunt] plugin next to your project's [Gruntfile.js][getting_started] with: `npm install grunt-template-client`
 
 [grunt]: http://gruntjs.com/
 [getting_started]: https://github.com/gruntjs/grunt/blob/master/docs/getting_started.md
 
 _Note: as of version 0.3.0 this plugin requires grunt 0.4. Install version 0.2.1 for grunt 0.3 support._
 
-Then add this line to your project's `gruntfile.js`:
+Then add this line to your project's `Gruntfile.js`:
 
 ```javascript
 grunt.loadNpmTasks('grunt-template-client');

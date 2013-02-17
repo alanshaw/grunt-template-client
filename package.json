@@ -26,7 +26,7 @@
       "url": "https://github.com/alanshaw/grunt-template-client/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "gruntfile.js",
+  "main": "Gruntfile.js",
   "bin": "bin/grunt-template-client",
   "engines": {
     "node": "~0.8.15"
