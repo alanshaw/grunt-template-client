@@ -35,6 +35,7 @@
     "test": "grunt jshint templateclient nodeunit"
   },
   "devDependencies": {
+    "grunt": "~0.4.0rc8",
     "grunt-contrib-clean": "~0.4.0rc6",
     "grunt-bump": "0.0.1",
     "grunt-contrib-nodeunit": "0.1.2rc6",
