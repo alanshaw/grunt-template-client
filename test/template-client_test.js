@@ -27,14 +27,18 @@
 
   exports.namespaced = {
     compile: function(test) {
-      test.expect(2);
+      test.expect(3);
 
-      var actual = grunt.file.read('test/tmp/bar.js');
-      var expected = grunt.file.read('test/expected/bar.js');
+      var actual = grunt.file.read('test/tmp/namespaced.js');
+      var expected = grunt.file.read('test/expected/namespaced.js');
       test.equal(expected, actual, 'Should compile to correct javascript format using new global variable');
 
-      actual = grunt.file.read('test/tmp/foo.js');
-      expected = grunt.file.read('test/expected/foo.js');
+      actual = grunt.file.read('test/tmp/val.js');
+      expected = grunt.file.read('test/expected/val.js');
+      test.equal(expected, actual, 'Should compile to correct javascript format using val option');
+
+      actual = grunt.file.read('test/tmp/all.js');
+      expected = grunt.file.read('test/expected/all.js');
       test.equal(expected, actual, 'Should compile to correct javascript format using existing variable');
 
       test.done();

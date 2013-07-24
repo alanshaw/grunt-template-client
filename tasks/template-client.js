@@ -20,6 +20,9 @@ module.exports = function(grunt) {
 			key: function(filepath) {
 				return path.basename(filepath, path.extname(filepath));
 			},
+			val: function (tpl) {
+				return tpl;
+			},
 			prefix: 'Hogan.compile(',
 			suffix: ')'
 		});

@@ -29,17 +29,17 @@
   "main": "Gruntfile.js",
   "bin": "bin/grunt-template-client",
   "engines": {
-    "node": "~0.8.15"
+    "node": "~0.8.15 || ~0.10.0"
   },
   "scripts": {
-    "test": "grunt jshint templateclient nodeunit"
+    "test": "grunt"
   },
   "devDependencies": {
     "grunt": "~0.4.0",
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt-bump": "0.0.1",
-    "grunt-contrib-nodeunit": "0.1.2",
-    "grunt-contrib-jshint": "0.1.1"
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-bump": "~0.0.11",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-jshint": "~0.6.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.0"

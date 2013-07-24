@@ -64,6 +64,62 @@ ready to use/include/concat etc in your app like this.
 tmpl.list.render({ items: [] });
 ```
 
+### Options
+
+#### options.variable
+Type: `String`
+Default value: `tmpl`
+
+The var attached to window that'll contain the compiled templates.
+
+#### options.prefix
+Type: `String`
+Default value: `Hogan.compile(`
+
+Code to output before each template content.
+
+#### options.suffix
+Type: `String`
+Default value: `)`
+
+Code to output after each template content.
+
+#### options.key
+Type: `Function`
+Default value: `Template file name without extension`
+
+Function returning `String` to use as the key for accessing the compiled template in `options.variable`. Passed the template file path as first param. Default is as follows:
+
+```javascript
+function(filepath) {
+  return path.basename(filepath, path.extname(filepath));
+}
+```
+
+#### options.val
+Type: `Function`
+Default value: `Function returning the template contents`
+
+Function that generates a `String` that is used as the template value. By default this simply returns the template contents, but it could be used to return a compiled template. For example:
+
+```javascript
+grunt.initConfig({
+    templateclient: {
+      dist: {
+        options: {
+          prefix: 'new Hogan.Template(',
+          suffix: ')',
+          val: function (tpl) {
+            return Hogan.compile(tpl, {asString: true});
+          }
+        },
+        src: ['templates/*.hogan'],
+        dest: 'dist/tpl.js'
+      }
+    }
+});
+```
+
 ## Todo
 I guess there will be need to tweek the regex that cleans the template.
 
@@ -71,6 +127,7 @@ I guess there will be need to tweek the regex that cleans the template.
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][grunt].
 
 ## Release History
+* 1.0.0 - Added `val` option to allow override of compiled template value
 * 0.3.0 - Grunt 0.4 support
 * 0.2.0 - Forked from https://github.com/ullmark/grunt-hogan-client to make generic.
 * 0.1.1 - Initial release

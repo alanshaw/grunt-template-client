@@ -20,9 +20,10 @@ module.exports = function(files, options, grunt) {
 	files.map(function(filepath) {
 		
 		var key = options.key(filepath);
-		var contents = grunt.file.read(filepath).replace(cleaner, '').replace(/'/g, "\\'");
+		var contents = grunt.file.read(filepath);
+		var val = options.val(contents).replace(cleaner, '').replace(/'/g, "\\'");
 		
-		js += '	' + options.variable + "['" + key + "']=" + options.prefix + '\'' + contents + '\'' + options.suffix + ';' + grunt.util.linefeed;
+		js += '	' + options.variable + "['" + key + "']=" + options.prefix + "'" + val + "'" + options.suffix + ';' + grunt.util.linefeed;
 	});
 
 	js += '}());' + grunt.util.linefeed;

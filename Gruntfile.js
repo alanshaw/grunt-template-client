@@ -12,12 +12,29 @@ module.exports = function(grunt) {
           prefix: 'new Ext.XTemplate(',
           suffix: ')'
         },
-        src: ['test/templates/**/*.hogan'],
-        dest: 'test/tmp/foo.js'
+        src: ['test/templates/foo.hogan', 'test/templates/bar.hogan'],
+        dest: 'test/tmp/namespaced.js'
       },
-      global: {
+      val: {
+        options: {
+          prefix: 'new Hogan.Template(',
+          suffix: ')',
+          val: function (tpl) {
+            // Mock Hogan
+            var Hogan = {
+              compile: function (tpl, opts) {
+                return 'function(c,p,i){var _=this;_.b(i=i||"");_.b("please ");_.b(_.v(_.f("compile",c,p,0)));_.b(" me");return _.fl();;}';
+              }
+            };
+            return Hogan.compile(tpl, {asString: true});
+          }
+        },
+        src: 'test/templates/val.hogan',
+        dest: 'test/tmp/val.js'
+      },
+      all: {
         src: ['test/templates/**/*.hogan'],
-        dest: 'test/tmp/bar.js'
+        dest: 'test/tmp/all.js'
       }
     },
 
@@ -43,14 +60,13 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         node: true,
-        es5: true
+        globals: {
+          Hogan: true,
+          foo: true,
+          window: true
+        }
       },
-      globals: {
-        Hogan: true,
-        foo: true,
-        window: true
-      },
-      files: ['grunt.js', 'tasks/**/*.js', 'test/template-client_test.js']
+      files: ['Gruntfile.js', 'tasks/**/*.js', 'test/template-client_test.js']
     }
   });
 
